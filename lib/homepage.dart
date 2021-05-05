@@ -26,15 +26,13 @@ class _HomepageState extends State<Homepage> {
           title: Text("Application Exams"),
           centerTitle: true,
           bottom: TabBar(
-            labelColor: Color(0xffffffff), // สีของข้อความปุ่มที่เลือก
-            unselectedLabelColor:
-                Color(0x55ffffff), // สีของข้อความปุ่มที่ไม่ได้เลือก
+            labelColor: Color(0xffffffff),
+            unselectedLabelColor: Color(0x55ffffff),
             tabs: <Tab>[
               Tab(icon: Icon(Icons.book_online), text: 'To do list'),
               Tab(icon: Icon(Icons.calculate), text: 'Calculator'),
               Tab(icon: Icon(Icons.person), text: 'Person'),
             ],
-            // controller: controller,
           ),
         ),
         body: TabBarView(
