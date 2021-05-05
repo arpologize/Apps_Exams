@@ -1,3 +1,4 @@
+// Class Person เก็บข้อมูลต่างๆในแต่ละบุคคล
 class Person {
   Person(
       {this.name,

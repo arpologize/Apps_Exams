@@ -1,11 +1,8 @@
-import 'package:app_exams/informations/Person.dart';
 import 'package:app_exams/informations/profile.dart';
 import 'package:app_exams/informations/register.dart';
 import 'package:app_exams/informations/save.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
-import 'package:flutter_time_picker_spinner/flutter_time_picker_spinner.dart';
 
 class Informations extends StatefulWidget {
   @override
@@ -19,12 +16,14 @@ class _InformationsState extends State<Informations> {
     super.initState();
   }
 
+//สร้างตัวโหลดข้อมูลว่าโหลดเสร็จพร้อมที่จะแสดงผลหรือยัง
   bool checkfetch = false;
   Future<void> fetchData() async {
     await getList();
     checkfetch = true;
   }
 
+//ฟังก์ชันใช้สำหรับการ Setstate หน้าหลักเวลาหน้าที่ 2 เพิ่มข้อมูลและถูก pop ออก หน้าหลักจะ setstate ตามด้วย
   Future onGoBack(dynamic value) {
     setState(() {});
   }
@@ -34,6 +33,7 @@ class _InformationsState extends State<Informations> {
     Navigator.push(context, route).then(onGoBack);
   }
 
+// Widget แสดงรายชื่อบุคคล
   Widget showListPeople() {
     return Container(
       child: ListView.builder(
@@ -101,6 +101,7 @@ class _InformationsState extends State<Informations> {
     );
   }
 
+// ปุ่มเอาไว้เพิ่มบุลคลเพิ่ม
   Widget registerButton() {
     return Container(
         alignment: Alignment.topRight,
@@ -108,9 +109,6 @@ class _InformationsState extends State<Informations> {
           style: ButtonStyle(),
           child: Text("Add Person"),
           onPressed: () {
-            // MaterialPageRoute materialPageRoute =
-            //     MaterialPageRoute(builder: (BuildContext context) => Register());
-            // Navigator.of(context).push(materialPageRoute);
             navigateSecondPage();
           },
         ));
@@ -125,7 +123,6 @@ class _InformationsState extends State<Informations> {
               if (checkfetch) {
                 return SafeArea(
                     child: Container(
-                  //decoration: BoxDecoration(color: Colors.blueGrey.shade100),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

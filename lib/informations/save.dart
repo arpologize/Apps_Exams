@@ -2,6 +2,8 @@ import 'package:app_exams/informations/person.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
+//เอาไว้บันทึกข้อมูลไว้ในโทรศัพท์มือถือ
+
 List<Person> allPeople = [];
 SharedPreferences sharedPreferences;
 
@@ -26,9 +28,7 @@ Future<void> getList() async {
   } else {
     for (var item in prefs.getStringList('people')) {
       Map mapObject = jsonDecode(item);
-      // use the fromMap constructor to convert the Map to a Payment object
       Person person = Person.fromMap(mapObject);
-      // print the members of the payment class
       allPeople.add(person);
     }
   }

@@ -12,16 +12,17 @@ class Todolist extends StatefulWidget {
 class _TodolistState extends State<Todolist> {
   @override
   void initState() {
-    //getList();
     super.initState();
   }
 
+//เช็คว่าข้อมูลโหลดมาพร้อมแล้วหรือยัง
   bool checkfetch = false;
   Future<void> fetchData() async {
     await getList();
     checkfetch = true;
   }
 
+//ฟังก์ชันเช็คว่ามีข้อมูลวันนี้ อื่นๆ หรือเสร็จสิ้นหรือยัง ถ้าไม่มี Topic แสดงหัวข้อเรื่องจะหายไป
   DateTime selectedDate;
   bool checkProjectToday() {
     for (var index = 0; index < allProject.length; index++) {
@@ -54,6 +55,7 @@ class _TodolistState extends State<Todolist> {
     return false;
   }
 
+// ปฏิทินเลือกเวลา
   Future<Null> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
         context: context,
@@ -67,6 +69,7 @@ class _TodolistState extends State<Todolist> {
       });
   }
 
+// Widget แสดง Icon ปฏิทิน
   Widget calendar() {
     return Row(
       children: [
@@ -90,6 +93,7 @@ class _TodolistState extends State<Todolist> {
     );
   }
 
+// ช่อง Input ไว้ป้อนชื่องานว่างานอะไร
   void inputProject(context) {
     var _inputtext = TextEditingController();
 
@@ -174,6 +178,7 @@ class _TodolistState extends State<Todolist> {
     );
   }
 
+// ช่อง input ไว้แก้งานที่ถูกเพิ่มแล้ว เปลี่ยนชื่อ เปลี่ยนเวลา
   void editProject(context, int index) {
     var _title = TextEditingController();
     _title.value = _title.value.copyWith(text: allProject[index].projectName);
@@ -288,6 +293,7 @@ class _TodolistState extends State<Todolist> {
     );
   }
 
+// List แสดงตารางงานของวันนี้
   Widget showListProjectToday() {
     return Container(
       child: ListView.builder(
@@ -364,6 +370,7 @@ class _TodolistState extends State<Todolist> {
     );
   }
 
+// List แสดงตารางงานที่ไม่ใช่ของวันนี้
   Widget showListProject() {
     return Container(
       child: ListView.builder(
@@ -436,6 +443,7 @@ class _TodolistState extends State<Todolist> {
     );
   }
 
+// List แสดงตารางงานที่เสร็จสิ้นแล้ว
   Widget showListFinishProject() {
     return Container(
       child: ListView.builder(
@@ -557,7 +565,6 @@ class _TodolistState extends State<Todolist> {
             }),
         floatingActionButton: FloatingActionButton(
           onPressed: () => setState(() => inputProject(context)),
-          //tooltip: 'Increment Counter',
           child: const Icon(Icons.add),
         ));
   }

@@ -44,14 +44,3 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
-// SafeArea(
-//             child: Container(
-//                 decoration: BoxDecoration(),
-//                 child: Center(
-//                   child: SingleChildScrollView(
-//                     child: Column(
-//                       mainAxisSize: MainAxisSize.min,
-//                       children: <Widget>[],
-//                     ),
-//                   ),
-//                 )))

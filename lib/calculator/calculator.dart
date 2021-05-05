@@ -17,6 +17,7 @@ class _CalculatorState extends State<Calculator> {
   String _expression = '';
   bool answer = false;
 
+//สร้างฟังก์ชันในการคลิ๊กปุ่ม
   void numClick(String text) {
     if (answer &&
         (text != '%' &&
@@ -60,14 +61,13 @@ class _CalculatorState extends State<Calculator> {
     });
   }
 
+//สร้าง Widget ในการแสดงลักษณะของปุ่ม
   Widget numButton(String key) {
     return Container(
       width: 9.0.h,
       height: 9.0.h,
       margin: EdgeInsets.all(10),
       child: TextButton(
-        // style: ButtonStyle(backgroundColor: ),
-        //color: Colors.white.withOpacity(1),
         child: Text(
           key,
           style: TextStyle(
@@ -162,10 +162,6 @@ class _CalculatorState extends State<Calculator> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Calculator"),
-      //   centerTitle: true,
-      // ),
       body: SafeArea(
           child: Container(
               decoration: BoxDecoration(color: Colors.blueGrey.shade900),

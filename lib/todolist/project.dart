@@ -1,3 +1,4 @@
+//Class Project แสดงข้อมูลต่างๆของโปรเจค โดย projectName คือ ชื่องาน projectDid คือ งานนี้เสร็จสิ้นหรือยัง projectDate วันที่ต้องทำ
 class Project {
   Project({
     this.projectName,

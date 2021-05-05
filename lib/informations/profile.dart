@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:app_exams/informations/save.dart';
 
+//หน้านี้แสดงรายละเอียดแต่ละบุคคลโดยมี Stateless เอาไว้แสดงข้อมูลอย่างเดียว
 class Profile extends StatelessWidget {
   int index;
   Profile({Key key, this.index}) : super(key: key);

@@ -22,6 +22,7 @@ class _RegisterState extends State<Register> {
   DateTime _birthday = DateTime.now();
   var _telnum = TextEditingController();
   var _address = TextEditingController();
+  //Widget แสดงกรอบอินพุธข้อมูล
   Widget _textField(int index) {
     List<dynamic> fieldInformation = [
       _name,
@@ -59,9 +60,6 @@ class _RegisterState extends State<Register> {
                     color: Colors.blue,
                     width: 2.0,
                   )),
-              // enabledBorder: new OutlineInputBorder(
-              //     borderRadius: new BorderRadius.circular(20.0),
-              //     borderSide: new BorderSide(color: Colors.black, width: 1)),
               focusedBorder: OutlineInputBorder(
                 borderRadius: new BorderRadius.circular(20.0),
                 borderSide: BorderSide(color: Colors.black, width: 2.0),
@@ -77,6 +75,7 @@ class _RegisterState extends State<Register> {
                 color: Colors.black)));
   }
 
+// Widget แสดงปฏิทินเลือกวันเดือนปีที่ต้องการ
   Future<Null> selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
         context: context,
@@ -90,6 +89,7 @@ class _RegisterState extends State<Register> {
       });
   }
 
+//Widget แสดงปุ่มตกลงเพื่อบันทึกข้อมูล
   Widget addpeopleButton() {
     return Container(
         width: 40.0.w,
@@ -162,10 +162,6 @@ class _RegisterState extends State<Register> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text("Person"),
-      //   centerTitle: true,
-      // ),
       backgroundColor: Colors.blue.shade50,
       body: SafeArea(
           child: Container(

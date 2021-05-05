@@ -2,6 +2,7 @@ import 'package:app_exams/todolist/project.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
+//เก็บข้อมูลไว้ในโทรศัพท์
 List<Project> allProject = [];
 SharedPreferences sharedPreferences;
 
